@@ -13,9 +13,6 @@ import com.tzepart.notes_manger_mob_app.model.NoteModel;
 
 import java.util.List;
 
-/**
- * Created by misha on 31.10.2016.
- */
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
 
