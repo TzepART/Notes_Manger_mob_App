@@ -1,4 +1,4 @@
-package com.tzepart.notes_manger_mob_app;
+package com.tzepart.notes_manger_mob_app.view.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.tzepart.notes_manger_mob_app.App;
+import com.tzepart.notes_manger_mob_app.view.adapter.NotesAdapter;
+import com.tzepart.notes_manger_mob_app.R;
 import com.tzepart.notes_manger_mob_app.model.NoteModel;
 
 import java.util.ArrayList;
