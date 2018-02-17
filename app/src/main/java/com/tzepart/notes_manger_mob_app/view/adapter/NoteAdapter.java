@@ -14,11 +14,11 @@ import com.tzepart.notes_manger_mob_app.model.NoteModel;
 import java.util.List;
 
 
-public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
+public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
     private List<NoteModel> notes;
 
-    public NotesAdapter(List<NoteModel> notes) {
+    public NoteAdapter(List<NoteModel> notes) {
         this.notes = notes;
     }
 

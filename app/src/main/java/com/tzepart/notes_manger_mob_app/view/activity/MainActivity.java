@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
 import com.tzepart.notes_manger_mob_app.App;
-import com.tzepart.notes_manger_mob_app.view.adapter.NotesAdapter;
+import com.tzepart.notes_manger_mob_app.view.adapter.NoteAdapter;
 import com.tzepart.notes_manger_mob_app.R;
 import com.tzepart.notes_manger_mob_app.model.NoteModel;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        NotesAdapter adapter = new NotesAdapter(notes);
+        NoteAdapter adapter = new NoteAdapter(notes);
         recyclerView.setAdapter(adapter);
 
         App.getApi().getData("bash", 50).enqueue(new Callback<List<NoteModel>>() {
