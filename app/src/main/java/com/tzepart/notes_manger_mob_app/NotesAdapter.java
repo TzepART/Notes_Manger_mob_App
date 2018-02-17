@@ -8,52 +8,54 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.tzepart.notes_manger_mob_app.model.NoteModel;
+
 import java.util.List;
 
 /**
  * Created by misha on 31.10.2016.
  */
 
-public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> {
 
-    private List<PostModel> posts;
+    private List<NoteModel> notes;
 
-    public PostsAdapter(List<PostModel> posts) {
-        this.posts = posts;
+    public NotesAdapter(List<NoteModel> notes) {
+        this.notes = notes;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.note_item, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        PostModel post = posts.get(position);
+        NoteModel note = notes.get(position);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            holder.post.setText(Html.fromHtml(post.getElementPureHtml(), Html.FROM_HTML_MODE_LEGACY));
+            holder.note.setText(Html.fromHtml(note.getElementPureHtml(), Html.FROM_HTML_MODE_LEGACY));
         } else {
-            holder.post.setText(Html.fromHtml(post.getElementPureHtml()));
+            holder.note.setText(Html.fromHtml(note.getElementPureHtml()));
         }
-        holder.site.setText(post.getSite());
+        holder.site.setText(note.getSite());
     }
 
     @Override
     public int getItemCount() {
-        if (posts == null)
+        if (notes == null)
             return 0;
-        return posts.size();
+        return notes.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView post;
+        TextView note;
         TextView site;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            post = (TextView) itemView.findViewById(R.id.postitem_post);
-            site = (TextView) itemView.findViewById(R.id.postitem_site);
+            note = (TextView) itemView.findViewById(R.id.noteitem_note);
+            site = (TextView) itemView.findViewById(R.id.noteitem_site);
         }
     }
 }

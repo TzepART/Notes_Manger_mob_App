@@ -1,9 +1,9 @@
-package com.tzepart.notes_manger_mob_app;
+package com.tzepart.notes_manger_mob_app.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class PostModel {
+public class NoteModel {
 
     @SerializedName("site")
     @Expose
