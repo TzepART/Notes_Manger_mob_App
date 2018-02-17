@@ -8,9 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-/**
- * Created by misha on 31.10.2016.
- */
+
 public interface NotesManagerApi {
 
     @GET("/api/get")
