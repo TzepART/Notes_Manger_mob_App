@@ -2,7 +2,7 @@ package com.tzepart.notes_manger_mob_app;
 
 import android.app.Application;
 
-import com.tzepart.notes_manger_mob_app.api.NotesManagerApi;
+import com.tzepart.notes_manger_mob_app.api.NoteApi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends Application {
 
-    private static NotesManagerApi notesManagerApi;
+    private static NoteApi notesManagerApi;
     private Retrofit retrofit;
 
     @Override
@@ -24,10 +24,10 @@ public class App extends Application {
                 .baseUrl("http://www.tzepart_notes_manager.ru/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        notesManagerApi = retrofit.create(NotesManagerApi.class);
+        notesManagerApi = retrofit.create(NoteApi.class);
     }
 
-    public static NotesManagerApi getApi() {
+    public static NoteApi getApi() {
         return notesManagerApi;
     }
 }
